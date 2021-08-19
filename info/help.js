@@ -10,7 +10,7 @@ module.exports = {
       var embed = new Discord.MessageEmbed()
         .setTitle("🐱 Help")
         .setColor("yellow")
-        .addField("**Fun**", "`horny` | `rps`")
+        .addField("**Fun**", "`horny` | `rps` | `love` | `simp`")
         .addField("**Nekos**", "`nekoprofile` | `leaderboard` | `addpoints` | `rempoints`")
         .addField("**Apps**", "`app-editor` | `app-artist`")
         .addField("**Admin**", "`warn` | `warns` | `pardon`")
@@ -167,10 +167,33 @@ module.exports = {
       return message.channel.send(embed)
     }
 
+    //simp
+    if(args[0] === "simp") {
+      var embed = new Discord.MessageEmbed()
+        .setTitle("Help command for **Simp**")
+        .setColor(0xa890ee)
+        .addField("**Name**", "`Simp`")
+        .addField("**Usage**", "`kat simp`")
+        .addField("**Description**", "`This command will show you how big of a simp you are`")
+        .addField("**Aliases**", "`howsimp, simpmeter`")
+      return message.channel.send(embed)
+    }
+
+    //love
+    if(args[0] === "love") {
+      var embed = new Discord.MessageEmbed()
+        .setTitle("Help command for **Love**")
+        .setColor(0xa890ee)
+        .addField("**Name**", "`Love`")
+        .addField("**Usage**", "`kat love`")
+        .addField("**Description**", "`This command will show you how much you love someone`")
+        .addField("**Aliases**", "`lovemeter, howloving`")
+      return message.channel.send(embed)
+    }
     //**Info**
 
     //serverinfo
-    if(args[0] === "rps") {
+    if(args[0] === "serverinfo") {
       var embed = new Discord.MessageEmbed()
         .setTitle("Help command for **Server info**")
         .setColor("YELLOW")
