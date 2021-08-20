@@ -8,7 +8,14 @@ module.exports = {
     aliases: ["reset", "nekosreset"],
     run: async(client, message, args) => {
         let author = message.author;
-
+        if(!message.member.hasPermission("KICK_MEMBERS")) {
+            var embed = new Discord.MessageEmbed()
+                .setTitle("**🚫 | Error**")
+                .setDescription("You can't use this commmand!")
+                .setColor("RED")
+                .setTimestamp()
+            message.channel.send(embed)
+        }
         try {
             fs.unlinkSync('json.sqlite')
             var embed = new Discord.MessageEmbed()
@@ -22,6 +29,6 @@ module.exports = {
             })
         } catch (error) {
             message.channel.send(`:x: | ${author} you can't reset nekos since they've been already reseted!`)
-        }
+        } 
     }
 }
