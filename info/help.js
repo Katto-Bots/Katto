@@ -203,6 +203,19 @@ module.exports = {
         .addField("**Aliases**", "`None`")
       return message.channel.send(embed)
     }
+    
+    //reset
+    if(args[0] === "reset") {
+      var embed = new Discord.MessageEmbed()
+        .setTitle("Help command for **Nekos reset**")
+        .setColor("YELLOW")
+        .addField("**Name**", "`Reset`")
+        .addField("**Usage**", "`kat reset`")
+        .addField("**Description**", "`This command will reset nekos for Katto members`")
+        .addField("**Aliases**", "`nekosreset`")
+        .addField("**Required permissions**", "`KICK_MEMBERS`")
+      return message.channel.send(embed)
+    }
   }
 
 }
