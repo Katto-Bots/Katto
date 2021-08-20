@@ -30,16 +30,28 @@ client.aliases = new Collection();
     require(`./handlers/${handler}`)(client);
 });
 
-client.on("ready", () => {
-    console.log(`Name: ${client.user.username}\nTag: ${client.user.tag}\nID: ${client.user.id}`);
+const activities_list = [
+    "tomus not lazy",
+    "CALL ME MAMA",
+    "im active",
+    "laziness",
+    "best bot no cap?!",
+    "idk sum random shit im out of ideas"
+    ];
+
+client.on('ready', () => {
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
         client.user.setPresence({
-        status: "dnd",
-        activity: { 
-            name: "laziness",
-            type: "COMPETING"
-        }
-    })
-});
+            status : "idle",
+            activity : {
+                name : activities_list[index],
+                type : "COMPETING",
+            }
+        }); 
+    }, 5000); 
+    console.log(`Name: ${client.user.username}\nTag: ${client.user.tag}\nID: ${client.user.id}`);
+})
 
 client.on("message", async message => {
     const prefix = "kat "; // Prefix
