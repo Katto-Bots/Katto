@@ -11,7 +11,7 @@ module.exports = {
         .setTitle("🐱 Help")
         .setColor("yellow")
         .addField("**Fun**", "`horny` | `rps` | `love` | `simp`")
-        .addField("**Nekos**", "`nekoprofile` | `leaderboard` | `addpoints` | `rempoints`")
+        .addField("**Nekos**", "`nekoprofile` | `leaderboard` | `addpoints` | `rempoints` | `reset`")
         .addField("**Apps**", "`app-editor` | `app-artist`")
         .addField("**Admin**", "`warn` | `warns` | `pardon`")
         .addField("**Info**", "`serverinfo`")
@@ -73,6 +73,19 @@ module.exports = {
       return message.channel.send(embed)
     }
     
+    //reset
+    if(args[0] === "reset") {
+      var embed = new Discord.MessageEmbed()
+        .setTitle("Help command for **Nekos reset**")
+        .setColor("YELLOW")
+        .addField("**Name**", "`Reset`")
+        .addField("**Usage**", "`kat reset`")
+        .addField("**Description**", "`This command will reset nekos for Katto members`")
+        .addField("**Aliases**", "`nekosreset`")
+        .addField("**Required permissions**", "`KICK_MEMBERS`")
+      return message.channel.send(embed)
+      }
+
     //**Admin**
 
     //warn
@@ -201,19 +214,6 @@ module.exports = {
         .addField("**Usage**", "`kat serverinfo`")
         .addField("**Description**", "`This command will show you katto server info`")
         .addField("**Aliases**", "`None`")
-      return message.channel.send(embed)
-    }
-    
-    //reset
-    if(args[0] === "reset") {
-      var embed = new Discord.MessageEmbed()
-        .setTitle("Help command for **Nekos reset**")
-        .setColor("YELLOW")
-        .addField("**Name**", "`Reset`")
-        .addField("**Usage**", "`kat reset`")
-        .addField("**Description**", "`This command will reset nekos for Katto members`")
-        .addField("**Aliases**", "`nekosreset`")
-        .addField("**Required permissions**", "`KICK_MEMBERS`")
       return message.channel.send(embed)
     }
   }
